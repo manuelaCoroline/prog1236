@@ -1,0 +1,9 @@
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\bin\Debug\TypesManga.exe
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\bin\Debug\TypesManga.pdb
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.csproj.AssemblyReference.cache
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.TypesMangaForm.resources
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.Properties.Resources.resources
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.csproj.GenerateResource.cache
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.csproj.CoreCompileInputs.cache
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.exe
+C:\Users\tanol.DYLANE\OneDrive - MONCCNB\2CCNB\Session1\C#.NET\Devoirs\TypesManga\obj\Debug\TypesManga.pdb
