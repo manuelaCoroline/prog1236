@@ -1,0 +1,107 @@
+<!-- 
+        auteur : Joel Boudreau
+        date :  2024
+        but :
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/d2397623ae.js"></script>
+    <style type="text/css">
+        p {
+            font-size: 1.5em;
+            text-align: justify;
+        }
+
+        body {
+            margin: 25px 100px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 75px;
+        }
+
+        input[type=button] {
+            font-size: 1.5em;
+            padding: 8px;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: green;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1><i class="fas fa-code"></i> JavaScript <i class="fas fa-code"></i></h1>
+    <p>JavaScript a été créé en 1995 par Brendan Eich. Il a été standardisé sous le nom d'ECMAScript en juin
+        1997 par Ecma International dans le standard ECMA-262. Le standard ECMA-262 en est actuellement à sa
+        8e édition. JavaScript n'est depuis qu'une implémentation d'ECMAScript, celle mise en œuvre par la
+        fondation Mozilla. L'implémentation d'ECMAScript par Microsoft (dans Internet Explorer jusqu'à sa
+        version 9) se nomme JScript, tandis que celle d'Adobe Systems se nomme ActionScript. Avec les
+        technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World
+        Wide Web. Le langage JavaScript permet des pages web interactives, et à ce titre est une partie
+        essentielle des applications web. Une grande majorité des sites web l'utilisent, et la majorité des
+        navigateurs web disposent d'un moteur JavaScript dédié pour l'interpréter, indépendamment des
+        considérations de sécurité qui peuvent se poser le cas échéant.</p>
+    <p><strong>Source:</strong>Wikipédia</p>
+    <input type="button" class="btn btn-outline-success" value="Souligner les longs mots" onclick="" />
+
+    <script>
+      
+
+
+        function surligner()
+        {
+            const paragraph =document.querySelector("p")
+            const mots=paragraph.innerText.split(' ');
+            let count =0;
+            const motsModifies = [];
+
+
+                for (let i = 0; i < mots.length; i++) {
+                    const mot = mots[i];
+
+                    // Vérifie si le mot a 10 caractères ou plus
+                    if (mot.length >= 10) {
+                        count++; // Incrémente le compteur
+                        motsModifies.push(`<span class="highlight">${mot}</span>`); // Ajoute le mot modifié au tableau
+                    } else {
+                        motsModifies.push(mot); // Ajoute le mot non modifié au tableau
+                    }
+                }
+
+                // Utilise join pour réassembler le contenu du paragraphe
+                paragraph.innerHTML = motsModifies.join(' ');
+        
+            
+            
+        document.querySelector("input[type=button]" ).disabled=true;
+
+        document.title = `Mots de 10 caractères et plus : ${count}`;  
+            
+        }
+
+        document.querySelector("input[type=button]").addEventListener("click",surligner)
+
+    </script>
+</body>
+
+</html>

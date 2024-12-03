@@ -1,0 +1,159 @@
+<!--
+        auteur :Joel Boudreau
+        date : 2024
+       
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DOM Validation</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function valider() 
+      {
+        let nom = document.querySelector("#txtUsername").value;
+        let age = Number(document.querySelector("#txtAge").value);
+        let valide = true;
+
+        if (nom.length < 4)
+         {
+          document.querySelector("#erreurUsername").innerHTML = "erreur!";
+          valide = false;
+        }
+
+        if (isNaN(age) || age < 18) 
+        {
+          document.querySelector("#erreurAge").innerHTML = "erreur!";
+          valide = false;
+        }
+
+        if (valide == true) 
+        {
+          document.querySelector("#status").innerHTML = "formulaire envoye";
+          document.querySelector("#button").disabled = false;
+        }
+      }
+
+      function reactiver() 
+      {
+        document.querySelector("#erreurUsername").innerHTML = " ";
+        document.querySelector("#erreurAge").innerHTML = " ";
+        document.querySelector("#status").innerHTML = " ";
+        document.querySelector("#txtUsername").value = "";
+        document.querySelector("#txtAge").value = "";
+        document.querySelector("#button").disabled = true;
+        
+      }
+    </script>
+    <style>
+      form,
+      h1 {
+        margin: 50px;
+      }
+
+      span {
+        color: red;
+        font-weight: bold;
+      }
+
+      body {
+        margin-bottom: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="jumbotron text-center" style="margin-bottom: 0">
+      <h1>
+        <i class="bi bi-code"></i> PROG-1340 <i class="bi bi-code-slash"></i>
+      </h1>
+      <p>Développement Web avancé avec JavaScript et HTML5</p>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="#">Exercice</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.w3schools.com/jsref/default.asp"
+              >W3Schools JavaScript Références</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1>
+      <i class="bi bi-file-person"></i>Compte TikTok<i
+        class="bi bi-file-person"
+      ></i>
+    </h1>
+    <form>
+      <label
+        >Nom usager:<br />
+        <input
+          type="text"
+          id="txtUsername"
+          name="txtUsername"
+          placeholder="Minimum de 4 caractères" />
+        <span id="erreurUsername"></span
+      ></label>
+      <br />
+      <label
+        >Age :<br />
+        <input
+          type="text"
+          id="txtAge"
+          name="txtAge"
+          placeholder="Entrez votre age" />
+        <span id="erreurAge"></span
+      ></label>
+
+      <br />
+      <input
+        type="button"
+        class="btn btn-warning"
+        value="Envoyer"
+        onclick="valider()"
+      />
+      <input
+        type="button"
+        class="btn btn-warning"
+        value="Annuler"
+        onclick="reactiver()"
+      />
+    </form>
+    <h2 id="status"></h2>
+  </body>
+</html>

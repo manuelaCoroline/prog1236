@@ -1,0 +1,80 @@
+<!--
+    auteur :Joel Boudreau
+    date : 2024
+   
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manipulation d'un tableau</title>
+    <script>
+      let couleurs = ["rouge", "vert", "bleu"];
+    </script>
+  </head>
+
+  <body>
+    <h1>Manipulation d'un tableau</h1>
+    <h2>Les sorties doivent être à la console (console.log)</h2>
+    
+    <script>
+      //Affichage à la console
+
+      //1
+      //Utiliser console.log pour afficher directement le tableau
+      console.log(couleurs);
+      
+      
+      console.log("*********************************************");
+      //2
+      //Utiliser une boucle pour afficher les couleurs une en dessous de l'autre
+      couleurs.forEach((couleur) => {
+        console.log(couleur);
+      });
+
+      console.log("*********************************************");
+      //3
+      //Ajouter la couleur jaune au début du tableau
+      couleurs.unshift("jaune");
+
+      //4
+      //Ajouter la couleur orange à la fin du tableau
+      couleurs.push("orange");
+
+      //5
+      //Ajouter la couleur violet à la fin du tableau
+      couleurs.push("violet");
+
+      //6
+      //Utiliser une boucle pour afficher les couleurs une en dessous de l'autre
+      //Vous devriez avoir les couleurs suivantes : jaune, rouge, vert, bleu, orange, violet
+
+      couleurs.forEach(couleur => {
+        console.log(couleur);
+      });
+ 
+      console.log("*********************************************");
+      //7
+      //En utilisant indexOf, afficher l'index de la couleur rouge
+      let index = couleurs.indexOf("rouge");
+      console.log(index);
+
+      //8
+      //Enlever la couleur bleu du tableau
+      couleurs.splice(3, 1);
+
+      console.log("*********************************************");
+      //9
+      //Utiliser une boucle pour afficher les couleurs une en dessous de l'autre
+      //Vous devriez avoir les couleurs suivantes : jaune, rouge, vert,orange, violet
+      for (let i; i < couleurs.length; i++) {
+        console.log(couleurs[i]);
+       }
+      console.log("*********************************************");
+      //10
+      //Renverser l'ordre de votre array et l'afficher
+      let inverseCol = couleurs.reverse();
+      console.log(inverseCol);
+    </script>
+  </body>
+</html>

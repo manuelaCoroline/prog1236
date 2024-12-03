@@ -1,0 +1,193 @@
+<!--
+        auteur :Joel Boudreau CCNB
+        date : 2024
+       
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Random User</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .inf-content {
+            border: 1px solid #DDDDDD;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container bootstrap snippets bootdey">
+        <div class="panel-body inf-content">
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip"
+                        src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+                    <ul title="Ratings" class="list-inline ratings text-center">
+                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <strong>Information</strong><br>
+                    <div class="table-responsive">
+                        <table class="table table-user-information">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                            Gender
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="gender">
+                                        male
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-user  text-primary"></span>
+                                            Name
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="firstname">
+                                        Bootdey
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-cloud text-primary"></span>
+                                            Lastname
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="lastname">
+                                        Bootstrap
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                                            Username
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="username">
+                                        bootnipets
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon glyphicon-home text-primary"></span>
+                                            City
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="city">
+                                        Paris
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                            Email
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="email">
+                                        noreply@email.com
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                            Age
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="age">
+                                        27
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <span class="glyphicon glyphicon glyphicon-phone text-primary"></span>
+                                            Phone
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary" id="phone">
+                                        011-962-751
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        //https://www.bootdey.com/snippets/view/Table-user-information#html
+        let userJSON = '{"results":[{"gender":"male","name":{"title":"Mr","first":"Sebastian","last":"Christiansen"},"location":{"street":{"number":9156,"name":"Hybenvænget"},"city":"V.Skerninge","state":"Midtjylland","country":"Denmark","postcode":61460,"coordinates":{"latitude":"-28.6094","longitude":"-22.7523"},"timezone":{"offset":"-3:30","description":"Newfoundland"}},"email":"sebastian.christiansen@example.com","login":{"uuid":"c25e5e69-8cce-4627-8674-31d96276e19e","username":"heavyelephant278","password":"gareth","salt":"FXW4yiCX","md5":"9e6827108b24495d442ae69f1a7b18e9","sha1":"9df8e98be7674680031d6f10b1095357e759f5e6","sha256":"7f403df2f8146b35a9cac36c5e863d90a61ef710b9a5305a764a2c3ff5319c12"},"dob":{"date":"1948-07-08T16:35:29.516Z","age":73},"registered":{"date":"2016-11-19T08:09:38.703Z","age":5},"phone":"31449159","cell":"64326503","id":{"name":"CPR","value":"080748-5769"},"picture":{"large":"https://randomuser.me/api/portraits/men/61.jpg","medium":"https://randomuser.me/api/portraits/med/men/61.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/61.jpg"},"nat":"DK"}],"info":{"seed":"404fa055eb734365","results":1,"page":1,"version":"1.3"}}';
+
+        let objetUser=JSON.parse(userJSON);
+
+        let user=objetUser.results[0];
+        console.log(objetUser,user);
+
+        document.querySelector("#gender").innerHTML=user.gender;
+        document.querySelector("#firstname").innerHTML=user.name.first;
+        document.querySelector("#lastname").innerHTML=user.name.last;
+        document.querySelector("#username").innerHTML=user.login.username;
+        document.querySelector("#city").innerHTML=user.location.cite;
+        document.querySelector("#email").innerHTML=user.email;
+        document.querySelector("#age").innerHTML=user.dob.age;
+        document.querySelector("#phone").innerHTML=user.phone;
+        document.querySelector(".isTooltip").src=user.picture.large;
+
+
+
+    </script>
+</body>
+
+</html>

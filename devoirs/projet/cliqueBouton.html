@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Click Bouton</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <style type="text/css">
+      #main {
+        background-color: silver;
+        height: 900px;
+      }
+
+      #btnClick {
+        margin: 50px;
+      }
+
+      p {
+        margin: 50px 0;
+        font-size: 1.5em;
+      }
+
+      h1 {
+        margin-top: 1cm;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div id="main" class="col-10">
+          <form name="frmClique">
+            <div class="text-center">
+              <h1>Le clique rapide!!</h1>
+              <p>Tu dois cliquer 20 fois le plus rapidement possible</p>
+              <input
+                type="button"
+                class="btn btn-primary btn-lg"
+                value="Clique Moi!"
+                id="btnClick"
+                name="btnClick"
+                onclick="clique()"
+              />
+              <br />
+              <input
+                type="button"
+                value="Rejouer"
+                class="btn btn-success btn-lg"
+                id="btnRejouer"
+                name="btnRejouer"
+                onclick="rejour()"
+              />
+              <p># de cliques : <span id="infoClick">0</span></p>
+              <h3 id="message"></h3>
+              <h2>Historique des temps</h2>
+              <ul id="historique"></ul>
+              <!-- Liste pour afficher les temps -->
+            </div>
+          </form>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
+    <script>
+      const bouttonClique = document.querySelector("#btnClick");
+      const buttonRejouer = document.querySelector("#btnRejouer");
+      let nbClique = 0;
+      let dateDebut;
+      let dateFin;
+      const nombreClick = document.querySelector("#infoClick");
+      const TAILLE = 20;
+      let historiqueTemps = []; // Tableau pour enregistrer les temps
+      const ulHistorique = document.querySelector("#historique"); // Référence à la liste
+
+      function clique() {
+        if (nbClique === 0) {
+          dateDebut = new Date(); // Initialiser la date de début au premier clic
+        }
+        nbClique += 1;
+        nombreClick.innerHTML = nbClique;
+        if (nbClique === TAILLE) {
+          dateFin = new Date(); // Date de fin après 20 clics
+          bouttonClique.disabled = true;
+          const tempsTotal = dateFin - dateDebut; // Calculer la durée en millisecondes
+          document.querySelector(
+            "h3"
+          ).innerHTML = `Tu as cliqué ${TAILLE} fois en ${tempsTotal} millisecondes.`;
+
+          // Ajouter le temps au tableau historique
+          historiqueTemps.push(tempsTotal);
+          afficherHistorique(); // Mettre à jour l'affichage de l'historique
+        }
+      }
+
+      function rejour() {
+        nbClique = 0;
+        nombreClick.innerHTML = nbClique;
+        bouttonClique.disabled = false;
+        document.querySelector("h3").innerHTML = "";
+      }
+
+      // Fonction pour afficher l'historique des temps
+
+      function afficherHistorique() {
+        ulHistorique.innerHTML = ""; // On vide la liste avant de la remplir
+
+        // Boucle simple pour parcourir le tableau historiqueTemps
+        for (let i = 0; i < historiqueTemps.length; i++) {
+          const li = document.createElement("li");
+          li.textContent = `Essai ${i + 1}: ${
+            historiqueTemps[i]
+          } millisecondes`;
+          ulHistorique.appendChild(li); // Ajoute l'élément <li> à la liste <ul>
+        }
+      }
+    </script>
+  </body>
+</html>

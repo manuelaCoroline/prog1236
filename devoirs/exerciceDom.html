@@ -1,0 +1,59 @@
+<!--
+        auteur :Joel Boudreau
+        date : 2024
+        fichier : 
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exemple DOM</title>
+    <style>
+        input,
+        p {
+            font-size: 1.5em;
+        }
+
+        body {
+            margin: 2cm;
+        }
+    </style>
+    <script>
+        
+
+        function cliquerBouton() {
+            alert(document.querySelector("#txtBox").value);
+        }
+
+        function remplirTextBox() {
+            document.querySelector("#txtBox").value = "manuela";
+        }
+
+        function viderTextBox() {
+            document.querySelector("#txtBox").value = "";
+
+        }
+
+        function changerTitre(valeur) {
+            valeur="jean";
+            document.title = valeur;
+        }
+    </script>
+</head>
+
+<body>
+    <h1 ondblclick="viderTextBox()">Exercice DOM</h1>
+    <form id="frmTest" name="frmTestName">
+        <div>
+            <input type="text" id="txtBox" name="txtBoxName"  onfocus="remplirTextBox()"/><br /><br />
+            <input type="button" value="click me" id="btnClick" name="btnClickName" onclick="cliquerBouton()" />
+        </div>
+    </form>
+    
+    <p id="para" onmouseover="changerTitre(this.value)">Ceci est un paragraphe</p>
+
+
+</body>
+
+</html>

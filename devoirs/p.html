@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulaire</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <form id="frmDHTML">
+        <p id="p1">
+            Vivamus ullamcorper, turpis sed pretium condimentum, lacus orci vestibulum quam, et volutpat dolor risus at
+            risus. Duis bibendum tellus eget erat luctus fermentum...
+        </p>
+
+        <p id="p2">
+            Proin sodales quam eu libero ornare volutpat eu eleifend nibh. Fusce nisl ligula, aliquam nec tempus vel,
+            tincidunt a nisi...
+        </p>
+        visible/invisible<input type="checkbox" id="chkVisible" />
+        
+        <p id="p3">
+            Suspendisse scelerisque magna et leo facilisis et ultrices magna pretium. Aliquam nec sollicitudin neque...
+        </p>
+
+        <h4>Changer la police du paragraphe</h4>
+        <select id="lstFont">
+            <option value="Arial">Arial</option>
+            <option value="Comic Sans Ms">Comic Sans Ms</option>
+            <option value="Courier">Courier</option>
+        </select>
+
+        <h4>Alignement du paragraphe 3</h4>
+        gauche<input type="radio" checked="checked" name="rdAlign" value="left" />
+        centrer<input type="radio" value="center" name="rdAlign" />
+        droite<input type="radio" value="right" name="rdAlign" />
+    </form>
+
+    <script>
+        // Sélection des éléments du DOM
+        const paragraphe = document.querySelector("#p2");
+        const chkVisible = document.querySelector("#chkVisible");
+        const lstFont = document.querySelector("#lstFont");
+        const radioButtons = document.querySelectorAll("input[name='rdAlign']");
+        const p1 = document.querySelector("#p1");
+        const p3 = document.querySelector("#p3");
+
+        // Fonction pour afficher ou masquer le paragraphe 2
+        chkVisible.addEventListener('click', function() {
+            paragraphe.style.display = paragraphe.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Fonction pour changer la police du paragraphe 1
+        lstFont.addEventListener('change', function() {
+            p1.style.fontFamily = lstFont.value;
+        });
+
+        // Fonction pour changer l'alignement du paragraphe 3
+        radioButtons.forEach((radio) => {
+            radio.addEventListener('click', function() {
+                p3.style.textAlign = radio.value;
+            });
+        });
+    </script>
+</body>
+
+</html>

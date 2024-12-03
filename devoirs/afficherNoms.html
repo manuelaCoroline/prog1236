@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+  </body>
+</html>
+<script>
+  let nom = prompt("entrer votre nom");
+  let nombre2 = Number(prompt("combien de repetition voulez"));
+  if (isNaN(nombre2)) nombre2 = 10;
+  for (let i = 0; i < nombre2; i++) {
+    const rbgRed = Math.floor(Math.random() * 256);
+    const rbgGreen = Math.floor(Math.random() * 256);
+    const rbgBlue = Math.floor(Math.random() * 256);
+    document.write(
+      `<h2 style="color:rgb(${rbgRed},${rbgGreen},${rbgBlue})"> ${i}-- bonjour ${nom}</h2>`
+    );
+  }
+  document.title += new Date().toLocaleDateString();
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    function afficherNom(tab) {
+      tab.sort();
+      document.write(`<ul type="nope">`);
+      for (let i = 0; i < tab.length; i++) {
+        document.write(`<li>${tab[i]}</li>`);
+      }
+      document.write("</ul>");
+    }
+
+    let tableauNoms = [];
+    let nom;
+
+    do {
+      nom = prompt("Entrez  votre nom");
+
+      // Vérifie si le champ est non vide et non annulé
+      if (nom !== "" && nom !== null) {
+        tableauNoms.push(nom); // Ajoute le nom sans les espaces autour
+      }
+    } while (nom !== "" && nom !== null); // Arrête la boucle si Annuler ou champ vide
+  </script>
+
+  <body>
+    <h1>Affichage des noms</h1>
+
+    <script>
+      //appel des fonctions pour tester
+      afficherNom(tableauNoms);
+    </script>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: gray;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+</style>

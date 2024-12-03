@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Auteur: Manuela kengmo
+Date: 7 mai 2024
+Sujet: Exercice Formulaire
+-->
+<html lang="fr">
+    <head>
+        <title>GeoFlickr</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name='description' content="Formulaire GeoFlickr"> 
+        <meta name='Keywords' content="image, input, Inscriptions">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" >
+    <body>
+        <h1>
+        <img src="../image/transportation3.jpg"alt="transport" title="image provenant de tripadvisor.com" style="height: 45px"> géoflickr <img src="../image/transportation3.jpg"alt="transport" title="image provenant de tripadvisor.com" style="height: 45px">
+        </h1>
+         <h2>invoquer la recherche géographique</h2>
+        
+        <br><br>
+    
+        <form action = "mailto:emkengmo02@monccnb.ca?subject=geoflick-information" method="post">
+            
+                        <label>Latitude: <br> <input type="text" name="Latitude"></label><br><br>
+                        <label>Longitude:<br> <input type="text" name="longitude"></label><br><br>
+                        <label>rayon:<br> <input type="text" name="rayon"></label><br><br>
+                        <label>Date minimum de telechargement: <br> <input type="date" name="datemin"></label><br><br>
+                        <label>Date maximum de telechargement: <br> <input type="date" name="dateMax"></label><br><br>
+                        <label>nombre de photos:<br><input type="text" name="nbPhotos"></label><br><br>
+                        <input class="form-group" type="submit" id="submit" value="Chercher"> 
+        </form> 
+
+     </body>
+</html>

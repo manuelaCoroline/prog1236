@@ -1,0 +1,89 @@
+﻿<!-- 
+        auteur : Joel Boudreau
+        date :  2024
+        but :
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM FORMS</title>
+    <style type="text/css">
+        input[type=text],
+        input[type=button] {
+            width: 20%;
+            font-size: 1.3em;
+        }
+
+        label {
+            font-size: 1.3em;
+            padding-right: 10px;
+        }
+
+        input[type=checkbox] {
+            transform: scale(1.5);
+            padding: 5px;
+        }
+
+        body {
+            margin: 1cm;
+        }
+    </style>
+    <!-- lien pour JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      
+      $(document).ready(function () {
+            //Gestion des events
+            $('#btnRemplir').click(function () {
+                $(':text').val("PROG1340");
+                $('#info').hide().html('Bravo...ca fonctionne..!').fadeIn(2000);
+                //$("#info").hide();
+                //$('#info').html('Bravo...ca fonctionne..!');
+                //$('#info').fadeIn(3000);
+
+            });
+
+            $('#btnVider').click(function () {
+                $(':text').val("");
+            });
+
+            $(':checkbox').click(function () {
+                //if (this.checked)
+                console.log(this);
+                if ($(this).is(":checked"))
+                    $(":text").attr('disabled', 'disabled');
+                //$(":text").prop('disabled', true);
+                else
+                    $(":text").removeAttr('disabled');
+                //$(":text").prop('disabled', false);
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>Manipulation des contrôles sur un formulaire</h1>
+    <form name="frmForm" action="">
+        <input type="text" name="txt1" /><br /><br />
+        <input type="text" name="txt2" /><br /><br />
+        <input type="text" name="txt3" /><br /><br />
+        <input type="text" name="txt4" /><br /><br />
+        <input type="text" name="txt5" /><br /><br />
+        <input type="text" name="txt6" /><br /><br />
+        <input type="text" name="txt7" /><br /><br />
+        <input type="text" name="txt8" /><br /><br />
+        <input type="text" name="txt9" /><br /><br />
+
+
+        <input type="button" name="btnRemplir" value="Remplir" id="btnRemplir" />
+        <input type="button" name="btnVider" value="Vider" id="btnVider" /><br /><br />
+        <label>Activer/Désactiver <input type="checkbox" name="chkToggle" /></label>
+    </form>
+
+    <h3 id="info">Vous devez remplir TOUTES les boîtes de texte avec le mot "PROG-1340" en utilisant une boucle.</h3>
+</body>
+
+</html>

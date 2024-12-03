@@ -1,0 +1,96 @@
+<!--
+        auteur : Joel Boudreau
+        date :  2024
+        but :
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SELECT multipe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 100px;
+            font-size: 130%;
+        }
+
+        select,
+        option,
+        textArea {
+            font-size: 100%;
+            padding: 5px;
+
+        }
+    </style>
+   
+</head>
+
+<body>
+    <h1>Select à plusieurs sélections</h1>
+    <form id="frmWeb">
+
+        <p>SVP Choississez les sites que vous avez déjà été visité:</p>
+        <br /><br />
+
+        <select id="ddlSitesWEB" size="5" multiple="multiple">
+            <option value="https://www.tsn.ca/">TSN</option>
+            <option value="https://www.netflix.com/">Netflix</option>
+            <option value="https://www.cnn.com/">CNN</option>
+            <option value="https://www.meteomedia.com/">MétéoMédia</option>
+            <option value="https://flickr.com/">Flickr</option>
+        </select>
+
+        <br /><br />
+
+        <input type="Button" class="btn btn-primary  btn-lg" name="btnChoix" value="Afficher choix!"
+            onclick="afficherChoix()" />
+        <input type="Button" class="btn btn-primary btn-lg" name="btnReset" value="Vider" onclick="vider()" />
+
+        <br /><br />
+        <p>Mes sélections:</p>
+        <br />
+        <textarea id="txtMesChoix" rows="5" cols="30"></textarea>
+        <h5>Sélectionner le nombre d'items visibles dans le select</h5>
+        <div>
+            <label>1 <input type="range" min="1" max="5" value="5" id="rangeSize" onchange="slider(this.value)"> 5</label>
+        </div>
+    </form>
+
+    <script>
+        const select=document.querySelector("#ddlSitesWEB");
+        let aOptions =select.options;
+        let afficherBox=document.querySelector("#txtMesChoix");
+        let siteName="";
+
+        function afficherChoix()
+        {
+            for (let i=0;i < aOptions.length;i++)
+        {
+            if(aOptions[i].selected)
+            {
+            
+            siteName+=aOptions[i].text +'\n';
+            
+            }
+            afficherBox.innerHTML=`${siteName} `;
+        }
+
+        }
+
+        function vider()
+        {
+            afficherBox.innerHTML='';
+            select.selected=false;
+      }
+
+        function slider(valeur)
+        {
+            select.size=valeur;
+          }
+    </script>
+</body>
+
+</html>

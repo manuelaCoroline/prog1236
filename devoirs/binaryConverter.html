@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Binaire-Décimal</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      body {
+        margin: 50px;
+      }
+
+      button {
+        margin: 20px 50px;
+      }
+
+      #btnUn {
+        float: right;
+      }
+
+      #btnConvert {
+        display: block;
+        margin: 0 auto;
+      }
+
+      #txtBinaire {
+        width: 100%;
+        height: 2em;
+        font-size: 18pt;
+        font-weight: bold;
+      }
+
+      h3,
+      p {
+        text-align: center;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 18pt;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+          <h3>Convertir binaire-décimal</h3>
+          <form>
+            <input type="text" id="txtBinaire" ><br />
+            <button type="button" id="btnZero" class="btn btn-primary btn-lg">
+              0
+            </button>
+            <button type="button" id="btnUn" class="btn btn-primary btn-lg">
+              1</button
+            ><br />
+            <button
+              type="button"
+              id="btnConvert"
+              class="btn btn-success btn-lg"
+            >
+              Convertir!
+            </button>
+          </form>
+          <p id="info"></p>
+        </div>
+        <div class="col-sm"></div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Variables globales
+        let contenu = "";
+        let message = $("#info");
+        let txtBinaire = $("#txtBinaire");
+        let variableBool;
+
+        // Vider les champs et messages
+        function vider() {
+          contenu = "";
+          txtBinaire.val("");
+          message.html("");
+          variableBool = false;
+        }
+
+        function ajouterUn() {
+          if (variableBool) {
+            vider();
+          }
+          contenu += "1";
+          txtBinaire.val(contenu);
+        }
+
+        function ajouterZero() {
+          if (variableBool) {
+            vider();
+          }
+          contenu += "0";
+          txtBinaire.val(contenu);
+        }
+
+        // Convertir binaire en décimal
+        function convertir() {
+          const valeur = parseInt(contenu, 2);
+
+          if (isNaN(valeur)) {
+            message.html("En décimal : NaN ");
+          } else {
+            message.html(`En décimal : ${valeur}`);
+          }
+          variableBool = true;
+        }
+
+        // Gestion des événements
+        $("#btnUn").click(ajouterUn);
+        $("#btnZero").click(ajouterZero);
+        $("#btnConvert").click(convertir);
+      });
+    </script>
+  </body>
+</html>

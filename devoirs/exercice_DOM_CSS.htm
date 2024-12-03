@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulaire</title>
+    <meta charset="utf-8">
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <form id="frmDHTML">
+        <p id="p1">
+            Vivamus ullamcorper, turpis sed pretium condimentum, lacus orci vestibulum quam, et volutpat dolor risus at
+            risus. Duis bibendum tellus eget erat luctus fermentum? Nunc pellentesque lacus in elit semper non suscipit
+            mauris consequat. Donec nec nunc purus. Duis fringilla, leo nec mollis fermentum, ante mauris tempus est, a
+            sollicitudin urna turpis eget lacus. Morbi laoreet purus quis libero consequat dictum. Nunc neque erat,
+            convallis sed ornare eu, facilisis at elit. Sed rutrum ante eget nunc consectetur pulvinar. Nunc porttitor
+            pharetra nisi eget faucibus? Vestibulum venenatis erat in diam commodo mattis. Nam fermentum, nisl eu
+            vulputate molestie; lacus massa consequat nibh, ac vehicula eros orci a dolor. Suspendisse eget elit non
+            nulla molestie hendrerit. Donec quam turpis, consequat vel tempus ut, bibendum non massa. Donec aliquet,
+            ante non porttitor condimentum, sapien nisl eleifend ipsum, eu facilisis augue nibh nec orci. Curabitur eu
+            tempus massa. Maecenas vel accumsan elit!
+        </p>
+
+        <p id="p2">
+            Proin sodales quam eu libero ornare volutpat eu eleifend nibh. Fusce nisl ligula, aliquam nec tempus vel,
+            tincidunt a nisi. Sed aliquet faucibus scelerisque. Aliquam enim diam, tempor quis egestas in, venenatis eu
+            elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi sodales,
+            nisi sit amet bibendum consectetur, purus nisl tempus lectus, a euismod urna nulla eu nunc. Etiam a felis et
+            lorem gravida adipiscing at ut orci. Etiam faucibus augue felis. Suspendisse magna elit; posuere et
+            fringilla in, adipiscing vehicula mauris. In pellentesque pretium massa non vehicula. Pellentesque habitant
+            morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras condimentum mi at ante mattis
+            id varius ante scelerisque. Pellentesque sagittis volutpat laoreet? Ut tristique malesuada justo, eu
+            convallis nibh ornare a. Nunc blandit, ante euismod congue pharetra, purus augue commodo enim, eget
+            ullamcorper tortor diam nec turpis.
+        </p>
+        visible/invisible<input type="checkbox" id="chkVisible"  />
+        <p id="p3">
+            Suspendisse scelerisque magna et leo facilisis et ultrices magna pretium. Aliquam nec sollicitudin neque.
+            Vestibulum nisi urna, tempor in porta sit amet, venenatis ac est. Donec adipiscing accumsan scelerisque.
+            Nunc pulvinar ligula justo, quis congue urna. Proin non nunc vel neque ullamcorper sodales vel vel justo.
+            Nam semper commodo odio, sit amet vestibulum augue euismod in. Ut non lacus libero; placerat convallis est.
+            Nullam pharetra gravida metus euismod gravida? Fusce congue mauris vel lacus lacinia vel fringilla nunc
+            consequat. Cras fermentum, neque vitae molestie semper, magna lorem suscipit ante, ac pulvinar metus ligula
+            imperdiet ipsum. Fusce adipiscing ultrices neque. Duis ac nisi et lacus pharetra porttitor vitae vel velit.
+        </p>
+        <h4>Changer le font du paragraphe</h4>
+        <select id="lstFont">
+            <option value="Arial">Arial</option>
+            <option value="Comic Sans Ms">Comic Sans Ms</option>
+            <option value="Courier">Courier</option>
+        </select>
+        <h4>Alignement du paragraphe 3</h4>
+        gauche<input type="radio" checked="checked" name="rdAlign" value="left" />
+        centrer<input type="radio" value="center" name="rdAlign" />
+        droite<input type="radio" value="right" name="rdAlign" />
+    </form>
+	   <script>
+        let p2=document.querySelector("#p2");
+        let p1=document.querySelector("#p1");
+        let p3=document.querySelector("#p3");
+
+        let radioButtons = document.querySelectorAll("input[name='rdAlign']");
+        let selectFont = document.querySelector("#lstFont");
+        let chkVisible = document.querySelector("#chkVisible");
+
+        // Gestion de la visibilité du paragraphe p2
+        chkVisible.addEventListener('click', function () {
+            p2.style.display = p2.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Changement de la police de p1
+        selectFont.addEventListener('change', function () {
+            p1.style.fontFamily = selectFont.value;
+        });
+
+        // Alignement de p3
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function () {
+                p3.style.textAlign = this.value;
+            });
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

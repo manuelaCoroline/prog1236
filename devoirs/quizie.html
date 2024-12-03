@@ -1,0 +1,52 @@
+<!--
+        développeur(e) : Manuela
+        date : 2024
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz</title>
+  </head>
+
+  <body>
+    <h1>Quiz</h1>
+    <hr />
+    <div>
+      <form>
+        <script>
+          let aJours = [
+            "DimanCHE",
+            "lUNdi",
+            "MarDi",
+            "mErCrEdI",
+            "JeuDi",
+            "venDRedI",
+            "SAmEdi",
+          ];
+
+          // Convertir chaque jour en minuscule et remettre la première lettre en majuscule
+          for (let i = 0; i < aJours.length; i++) {
+            aJours[i] = aJours[i].toLowerCase();
+           
+          }
+
+          // Trier et inverser les jours
+          aJours.sort();
+          aJours.reverse();
+
+          // Afficher le menu déroulant
+          document.write("<select>");
+          for (let i = 0; i < aJours.length; i++) {
+            document.write(`<option value="${i}">${aJours[i]}</option>`);
+          }
+          document.write("</select>");
+
+          // Afficher la valeur de Pi
+          document.write(`<p>La valeur de PI est de ${Math.PI}</p>`);
+        </script>
+      </form>
+    </div>
+  </body>
+  <script></script>
+</html>

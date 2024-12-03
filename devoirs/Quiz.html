@@ -1,0 +1,55 @@
+<!--
+        développeur(e) : manuela
+        date : 2024
+       
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz</title>
+  </head>
+
+  <body>
+    <h1>Quiz</h1>
+    <hr />
+    <div>
+      <form>
+        <script>
+          let aJours = [
+            "DimanCHE",
+            "lUNdi",
+            "MarDi",
+            "mErCrEdI",
+            "JeuDi",
+            "venDRedI",
+            "SAmEdi",
+          ];
+
+          // Afficher le menu déroulant avec les jours de la semaine
+          
+            for (let i = 0; i < aJours.length; i++) {
+            let jourMinuscule= aJours[i].toLowerCase();  }
+
+          aJours.sort();
+          aJours.reverse();
+
+          document.write("<select>");
+
+          for (let i = 0; i < aJours.length; i++) {
+            
+            
+            document.write(`<option value="${i}">${jourMinuscule[i]}</option>`);
+          }
+          
+          document.write("</select>");
+
+          
+          // Afficher la valeur de Pi
+          document.write(`<p>La valeur de PI est de ${Math.PI}</p>`);
+        </script>
+      </form>
+    </div>
+  </body>
+  <script></script>
+</html>

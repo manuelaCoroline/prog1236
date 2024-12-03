@@ -1,0 +1,92 @@
+<!--
+        auteur : Joel Boudreau
+        date :  2024
+        but :
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Faire afficher une sélection simple d'un listbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 100px;
+            font-size: 130%;
+        }
+
+        select,
+        option {
+            font-size: 100%;
+            padding: 5px;
+            color: white;
+            background-color: rgb(40, 167, 69);
+        }
+    </style>
+    <!-- lien pour JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+   
+</head>
+
+<body>
+    <h1>Manipulation d'une liste déroulante &lt;select&gt;</h1>
+    <form id="frmWeb">
+
+        <p>Voici le contenu de la liste déroulante :</p>
+        <ul>
+            <li>TSN (value = https://www.tsn.ca/)</li>
+            <li>Netflix (value = https://www.netflix.com/)</li>
+            <li>CNN (value = https://www.cnn.com/)</li>
+            <li>MétéoMédia (value = https://www.meteomedia.com/)</li>
+            <li>Flickr (value = https://flickr.com/)</li>
+        </ul>
+        <p>
+            <label>Veuillez choisir un site web :
+                <select id="ddlSitesWeb">
+                    <option value="https://www.tsn.ca/">TSN</option>
+                    <option value="https://www.netflix.com/">Netflix</option>
+                    <option value="https://www.cnn.com/">CNN</option>
+                    <option value="https://www.meteomedia.com/">MétéoMédia</option>
+                    <option value="https://flickr.com/">Flickr</option>
+
+                </select>
+            </label>
+        </p>
+        <strong>Au changement de la sélection (onchange), faites afficher le site (texte) et son url (value) dans le
+            &lt;p&gt; avec id info</strong>
+        <br /><br />
+        <input type="Button" class="btn btn-success btn-lg" value="Sélectionner CNN" />
+    </form>
+    <br /><br />
+    <p id="info"></p>
+
+    <script>
+
+let selecteur=  $("#ddlSitesWeb").val();
+
+let message=$("#info");
+        function afficherInfo()
+        {
+            let text=$(":selected").html();
+
+            message.hide().html(`a href = "${selecteur}" > ${text} ---> ${selecteur} </a>`).fadeIn()
+        }
+
+        function afficherCSS()
+        {
+            let select=$("#ddlSitesWeb");
+            select.prop("selectedIndex",2);
+            afficherInfo();
+        }
+
+        $(document).ready(
+         $("#ddlSitesWeb").change(afficherInfo),
+        $(".btn").click(afficherCSS));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!--
+        auteur : Joel Boudreau
+        date :  2024
+        but :
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Random user selelect</title>
+    <link
+      href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body {
+        margin: 100px;
+        font-size: 130%;
+      }
+
+      select,
+      option {
+        font-size: 100%;
+        padding: 5px;
+        color: white;
+        background-color: rgb(40, 167, 69);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Sélectionne un usager JSON</h1>
+    <form>
+      <p>
+        <label
+          >Veuillez choisir un usager :
+          <select id="usersSelect"></select>
+        </label>
+      </p>
+    </form>
+    <br /><br />
+    <div class="container bootstrap snippets bootdey">
+      <div class="panel-body inf-content">
+        <div class="row">
+          <div class="col-md-4">
+            <img
+              alt=""
+              style="width: 600px"
+              title=""
+              class="img-circle img-thumbnail isTooltip"
+              src="https://bootdey.com/img/Content/avatar/avatar7.png"
+              data-original-title="Usuario"
+            />
+            <ul title="Ratings" class="list-inline ratings text-center">
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-star"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-star"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-star"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-star"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="glyphicon glyphicon-star"></span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <strong>Information</strong><br />
+            <div class="table-responsive">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon-asterisk text-primary"
+                        ></span>
+                        Gender
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="gender"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon-user text-primary"
+                        ></span>
+                        Name
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="firstname"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon-cloud text-primary"
+                        ></span>
+                        Lastname
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="lastname"></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon-bookmark text-primary"
+                        ></span>
+                        Username
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="username"></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon glyphicon-home text-primary"
+                        ></span>
+                        City
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="city"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon-envelope text-primary"
+                        ></span>
+                        Email
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="email"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon-calendar text-primary"
+                        ></span>
+                        Age
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="age"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          class="glyphicon glyphicon glyphicon-phone text-primary"
+                        ></span>
+                        Phone
+                      </strong>
+                    </td>
+                    <td class="text-primary" id="phone"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let usersJSON =
+        '{"results":[{"gender":"male","name":{"title":"Mr","first":"Cooper","last":"Hall"},"location":{"street":{"number":7968,"name":"Wellesley Street"},"city":"Timaru","state":"Tasman","country":"New Zealand","postcode":41306,"coordinates":{"latitude":"61.3302","longitude":"-13.3652"},"timezone":{"offset":"+1:00","description":"Brussels, Copenhagen, Madrid, Paris"}},"email":"cooper.hall@example.com","login":{"uuid":"437cfdc5-5db0-4894-8d1b-c43da96881b6","username":"bigpanda777","password":"sugar","salt":"u1SbFIsW","md5":"83c1ab7abbd4d30b2d3cf7f2c264fd97","sha1":"38b5c1ee4a94508c96612a722ebe87b7df129218","sha256":"a3619ad73b3c97ab355b49d61b5b77a79242c914fb6146e58d4b8a2bf632822c"},"dob":{"date":"1960-11-16T08:35:58.816Z","age":61},"registered":{"date":"2006-05-28T12:32:09.739Z","age":15},"phone":"(654)-550-7365","cell":"(571)-933-3252","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/men/84.jpg","medium":"https://randomuser.me/api/portraits/med/men/84.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/84.jpg"},"nat":"NZ"},{"gender":"female","name":{"title":"Miss","first":"Vicky","last":"Boyd"},"location":{"street":{"number":5109,"name":"High Street"},"city":"Gloucester","state":"Staffordshire","country":"United Kingdom","postcode":"Z6N 5JJ","coordinates":{"latitude":"31.5671","longitude":"30.8417"},"timezone":{"offset":"-11:00","description":"Midway Island, Samoa"}},"email":"vicky.boyd@example.com","login":{"uuid":"9c3f5653-8389-4f13-8846-df8886173f75","username":"goldenmeercat105","password":"jjjjjjj","salt":"FHIzeEp0","md5":"a9a1aca54e9319e29025e0736f32ae17","sha1":"9f8b724939c690868965943f61bb8cfa73d0f91e","sha256":"b1cade7b7cd1d0a6a28e84f6bb2328ba39b32ce3540d5a619de57747162efdfe"},"dob":{"date":"1992-06-27T09:31:52.674Z","age":29},"registered":{"date":"2003-12-09T09:34:14.562Z","age":18},"phone":"0116157 958 5417","cell":"0713-370-579","id":{"name":"NINO","value":"JA 57 61 12 I"},"picture":{"large":"https://randomuser.me/api/portraits/women/78.jpg","medium":"https://randomuser.me/api/portraits/med/women/78.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/78.jpg"},"nat":"GB"},{"gender":"female","name":{"title":"Miss","first":"Isabelle","last":"Curtis"},"location":{"street":{"number":6560,"name":"Boghall Road"},"city":"Tullow","state":"Offaly","country":"Ireland","postcode":27504,"coordinates":{"latitude":"20.3237","longitude":"-177.8982"},"timezone":{"offset":"+11:00","description":"Magadan, Solomon Islands, New Caledonia"}},"email":"isabelle.curtis@example.com","login":{"uuid":"e1c3dff8-f337-4149-a941-6928be9d961c","username":"orangeelephant779","password":"triangle","salt":"BtlJFM2g","md5":"e53062e1f2197e101785222df2b5b013","sha1":"eba6818a36eba651ad2904f868c1ddb9b361d49b","sha256":"08f8d7d96f5e430b553b3db7b09ca851288375d019960cc9aff3364a629eb726"},"dob":{"date":"1955-07-31T21:18:29.528Z","age":66},"registered":{"date":"2002-06-17T13:23:08.287Z","age":19},"phone":"051-579-3327","cell":"081-081-2134","id":{"name":"PPS","value":"1820738T"},"picture":{"large":"https://randomuser.me/api/portraits/women/78.jpg","medium":"https://randomuser.me/api/portraits/med/women/78.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/78.jpg"},"nat":"IE"},{"gender":"female","name":{"title":"Mrs","first":"Julie","last":"Ortiz"},"location":{"street":{"number":8495,"name":"Green Lane"},"city":"Inverness","state":"Berkshire","country":"United Kingdom","postcode":"UY0 3XW","coordinates":{"latitude":"76.3237","longitude":"26.8488"},"timezone":{"offset":"+4:30","description":"Kabul"}},"email":"julie.ortiz@example.com","login":{"uuid":"9117496d-aef7-4851-961d-256b761d3706","username":"blueladybug661","password":"martine","salt":"xXpI5rHV","md5":"2181cad08f7cfa5fb3009ebc26e95762","sha1":"a5c9cafa1148ecf01aaed5d12974e81816f1ce5a","sha256":"d297771476d476a74af307755c5aeff3f59c76f5b24b2526acaf0017e58121cf"},"dob":{"date":"1960-02-15T12:44:41.023Z","age":61},"registered":{"date":"2010-03-09T19:34:40.382Z","age":11},"phone":"0110596 154 7130","cell":"0741-902-612","id":{"name":"NINO","value":"RA 17 76 65 H"},"picture":{"large":"https://randomuser.me/api/portraits/women/89.jpg","medium":"https://randomuser.me/api/portraits/med/women/89.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/89.jpg"},"nat":"GB"},{"gender":"female","name":{"title":"Ms","first":"Rosario","last":"Romero"},"location":{"street":{"number":397,"name":"Calle de Alcalá"},"city":"Lorca","state":"Región de Murcia","country":"Spain","postcode":50406,"coordinates":{"latitude":"-71.8361","longitude":"-123.4860"},"timezone":{"offset":"+7:00","description":"Bangkok, Hanoi, Jakarta"}},"email":"rosario.romero@example.com","login":{"uuid":"6766fb19-8bb7-4afd-93f5-1b9fb547b466","username":"happybird761","password":"physics","salt":"L0ctuz7S","md5":"0df0f15dc33872b40e5b0ba4273f7a28","sha1":"705109586bcfc7631b6fffa4f83a063c128b8480","sha256":"6dbbbde706020160a35e51548165879f0d819dd0fb53e0b36fa5e6aff9e937aa"},"dob":{"date":"1964-09-30T20:02:27.871Z","age":57},"registered":{"date":"2011-10-17T10:48:00.195Z","age":10},"phone":"991-430-304","cell":"611-611-945","id":{"name":"DNI","value":"47117953-S"},"picture":{"large":"https://randomuser.me/api/portraits/women/28.jpg","medium":"https://randomuser.me/api/portraits/med/women/28.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/28.jpg"},"nat":"ES"},{"gender":"female","name":{"title":"Mademoiselle","first":"Angélique","last":"Muller"},"location":{"street":{"number":8590,"name":"Rue Cyrus-Hugues"},"city":"Schwarzenburg","state":"Basel-Landschaft","country":"Switzerland","postcode":4276,"coordinates":{"latitude":"-6.1712","longitude":"-101.5821"},"timezone":{"offset":"+3:30","description":"Tehran"}},"email":"angelique.muller@example.com","login":{"uuid":"bcf8fbc7-4dc8-4a22-86b0-9cf4efbfdf55","username":"redcat258","password":"clay","salt":"a7ValFSN","md5":"a9189a3e63b81ee0a1f7fd2a449cc3ec","sha1":"0fe81d1f8aeccbaef3a265316a858e5c49e2d980","sha256":"a435aa741310471c985f055c0e540e2c209ee7ba104b1155bd3369a1ac7053e6"},"dob":{"date":"1979-10-11T10:08:22.969Z","age":42},"registered":{"date":"2005-07-24T23:50:15.163Z","age":16},"phone":"075 814 96 63","cell":"076 073 90 77","id":{"name":"AVS","value":"756.4433.6885.18"},"picture":{"large":"https://randomuser.me/api/portraits/women/22.jpg","medium":"https://randomuser.me/api/portraits/med/women/22.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/22.jpg"},"nat":"CH"}],"info":{"seed":"a9a06cae8eaebe9f","results":6,"page":1,"version":"1.3"}}';
+
+      // let objetuser=JSON.parse(usersJSON);
+      let select = document.querySelector("#usersSelect");
+      // select.addEventListener('change', remplirInfo);
+
+      function remplirInfo(objetuser) {
+        let index = select.selectedIndex;
+        let users = objetuser.results;
+
+        for (let i = 0; i < users.length; i++) {
+          select.innerHTML += `<Option value="${i}"> ${users[i].name.first} ${users[i].name.last}</option>`;
+        }
+
+        document.querySelector("#gender").innerHTML = users[index].gender;
+        document.querySelector("#firstname").innerHTML =
+          users[index].name.first;
+        document.querySelector("#lastname").innerHTML = users[index].name.last;
+        document.querySelector("#username").innerHTML =
+          users[index].login.username;
+        document.querySelector("#city").innerHTML = users[index].location.city;
+        document.querySelector("#email").innerHTML = users[index].email;
+        document.querySelector("#age").innerHTML = users[index].dob.age;
+        document.querySelector("#phone").innerHTML = users[index].phone;
+        document.querySelector(".isTooltip").src = users[index].picture.large;
+      }
+
+      fetch("https://randomuser.me/api/?results=6")
+        .then((response) => response.json())
+        .then((objetuser) => remplirInfo(objetuser));
+
+      // console.log(objetuser.results.length,select);
+    </script>
+  </body>
+</html>

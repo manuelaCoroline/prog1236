@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function om(valeur) {
+        valeur = 12;
+        document.write(`${valeur}`);
+      }
+      let nombre;
+
+      // Affichage des balises h1 à h6
+      for (let i = 1; i <= 6; i++) {
+        document.write(`<h${i}> ceci est une balise h${i} </h${i}>`);
+      }
+
+      // Demander à l'utilisateur d'entrer deux nombres
+      let nb1 = Number(prompt("Entrez un nombre", "0"));
+      let nb2 = Number(prompt("Entrez le nombre 2", "0"));
+
+      // Vérifier si les entrées sont des nombres
+      if (isNaN(nb1)) {
+        nb1 = 0;
+      }
+      if (isNaN(nb2)) {
+        nb2 = 0;
+      }
+
+      // Calculer la somme des deux nombres
+      let totale = nb1 + nb2;
+
+      // Afficher le résultat
+      document.write(`<p>La somme de ${nb1} + ${nb2} = ${totale}</p>`);
+      document.title = `${totale}`;
+    </script>
+  </head>
+
+  <body>
+    <h2>nimm</h2>
+
+    <script>
+      om(nombre);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!--
+        auteur :Joel Boudreau
+        date : 2024
+       
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>template</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script>
+
+
+
+    </script>
+    <style>
+        div#color {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1><i class="bi bi-code"></i> PROG-1340 <i class="bi bi-code-slash"></i></h1>
+        <p>Développement Web avancé avec JavaScript et HTML5</p>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Exercice</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.w3schools.com/jsref/default.asp">W3Schools JavaScript
+                        Références</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="color">
+        <h1>Color JSon</h1>
+        <hr />
+        <h3>hexa : <span id="hexa"></span></h3>
+        <h3>rgb (<span id="red"></span>,<span id="green"></span>,<span id="blue"></span>)</h3>
+        <h3>nom : <span id="colorName"></span></h3>
+        <div><img id="colorImage" src="" /></div>
+
+
+    </div>
+
+    <script>
+        let jsonColor = '{"hex":{"value":"#FF7F00","clean":"FF7F00"},"rgb":{"fraction":{"r":1,"g":0.4980392156862745,"b":0},"r":255,"g":127,"b":0,"value":"rgb(255, 127, 0)"},"hsl":{"fraction":{"h":0.08300653594771235,"s":1,"l":0.5},"h":30,"s":100,"l":50,"value":"hsl(30, 100%, 50%)"},"hsv":{"fraction":{"h":0.08300653594771235,"s":1,"v":1},"value":"hsv(30, 100%, 100%)","h":30,"s":100,"v":100},"name":{"value":"Flush Orange","closest_named_hex":"#FF7F00","exact_match_name":true,"distance":0},"cmyk":{"fraction":{"c":0,"m":0.5019607843137255,"y":1,"k":0},"value":"cmyk(0, 50, 100, 0)","c":0,"m":50,"y":100,"k":0},"XYZ":{"fraction":{"X":0.5904988235294117,"Y":0.5687976470588235,"Z":0.07866627450980393},"value":"XYZ(59, 57, 8)","X":59,"Y":57,"Z":8},"image":{"bare":"https://www.thecolorapi.com/id?format=svg&named=false&hex=FF7F00","named":"https://www.thecolorapi.com/id?format=svg&hex=FF7F00"},"contrast":{"value":"#000000"},"_links":{"self":{"href":"/id?hex=FF7F00"}},"_embedded":{}}'
+       // url : https://www.thecolorapi.com/id?hex=FF7F00
+
+        let objetColor = JSON.parse(jsonColor);
+        
+console.log(objetColor);
+
+        document.querySelector("#hexa").innerHTML=objetColor.hex.value;
+        document.querySelector("#red").innerHTML=objetColor.rgb.r;
+        document.querySelector("#green").innerHTML=objetColor.rgb.g;
+        document.querySelector("#blue").innerHTML=objetColor.rgb.b;
+        document.querySelector("#colorName").innerHTML=objetColor.name.value;
+        document.querySelector("#colorImage").src=objetColor.image.named;
+        document.title=objetColor.rgb.value;
+        document.querySelector(".jumbotron").style.backgroundColor = objetColor.hex.value;
+
+    </script>
+</body>
+
+</html>

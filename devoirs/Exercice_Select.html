@@ -1,0 +1,94 @@
+<!--
+        auteur : Joel Boudreau
+        date :  2024
+        but :
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Faire afficher une sélection simple d'un listbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 100px;
+            font-size: 130%;
+        }
+
+        select,
+        option {
+            font-size: 100%;
+            padding: 5px;
+            color: white;
+            background-color: rgb(40, 167, 69);
+        }
+    </style>
+    <script>
+        
+    function afficherInfo()
+{
+
+   let select=document.querySelector("#ddlSitesWeb");
+     let  changementP=document.querySelector("#info");
+
+      let aOptions =select.options[select.selectedIndex];
+        
+         let siteName=aOptions.text;
+         let siteUrl=aOptions.value;
+
+        console.log(select,changementP);
+       
+
+        changementP.innerHTML=` <a href = "${siteUrl}" > ${siteName} ---> ${siteUrl} </a>` ;
+       // window.location.href = select.value;
+
+}
+
+function sellectionnerCNN()
+{
+    let select=document.querySelector("#ddlSitesWeb");
+    select.selectedIndex=2;
+   afficherInfo();
+   //select.onchange();
+   
+}
+
+    </script>
+</head>
+
+<body>
+    <h1>Manipulation d'une liste déroulante &lt;select&gt;</h1>
+    <form id="frmWeb">
+
+        <p>Voici le contenu de la liste déroulante :</p>
+        <ul>
+            <li>TSN (value = https://www.tsn.ca/)</li>
+            <li>Netflix (value = https://www.netflix.com/)</li>
+            <li>CNN (value = https://www.cnn.com/)</li>
+            <li>MétéoMédia (value = https://www.meteomedia.com/)</li>
+            <li>Flickr (value = https://flickr.com/)</li>
+        </ul>
+        <p>
+            <label>Veuillez choisir un site web :
+                <select id="ddlSitesWeb" onchange="afficherInfo()">
+                    <option value="https://www.tsn.ca/">TSN</option>
+                    <option value="https://www.netflix.com/">Netflix</option>
+                    <option value="https://www.cnn.com/">CNN</option>
+                    <option value="https://www.meteomedia.com/">MétéoMédia</option>
+                    <option value="https://flickr.com/">Flickr</option>
+
+                </select>
+            </label>
+        </p>
+        <strong>Au changement de la sélection (onchange), faites afficher le site (texte) et son url (value) dans le
+            &lt;p&gt; avec id info</strong>
+        <br /><br />
+        <input type="Button" class="btn btn-success btn-lg" value="Sélectionner CNN" onclick="sellectionnerCNN()" />
+    </form>
+    <br /><br />
+    <p id="info"></p>
+</body>
+
+</html>
